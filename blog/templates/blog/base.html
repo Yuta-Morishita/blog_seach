@@ -3,6 +3,10 @@
 
 <head>
     <title>Blog</title>
+    <form method="GET" action="{% url 'blog:index' %}">
+        <input type="text" name="keyword">
+        <button type="submit">検索</button>
+    </form>
 </head>
 
 <body>
