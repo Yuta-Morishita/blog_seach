@@ -4,6 +4,19 @@
 {% block content %}
 <div class="container alert alert-light" role="alert">
     <h3>一覧</h3>
+    {% if messages %}
+    {% if blogs.count > 0 %}
+    <h1>検索の結果{{ blogs.count }}件のブログが見つかりました</h1>
+    {% else %}
+    <h1>該当するブログは存在しません。</h1>
+    <a href="{% url 'blog:index' %}">トップページに戻る</a>
+    {% endif %}
+
+    {% for message in messages %}
+    {{ message }}
+    {% endfor %}
+
+    {% endif %}
 </div>
 
 {% for blog in blogs %}
