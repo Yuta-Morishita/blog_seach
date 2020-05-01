@@ -1,15 +1,15 @@
-{% extends 'blog/base.html' %}
+{% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-<h1>一覧</h1><br>
-<!-- blog_listに変更 -->
-{% for blog in blog_list %}
-<ul>
-    <li>
-        {{ blog.created_at }}
-        {{ blog.title }}
-        <a href="{% url 'blog:detail' blog.pk %}">詳細</a>
-    </li>
-</ul>
+<div class="container alert alert-light" role="alert">
+    <h3>一覧</h3>
+</div>
+
+{% for blog in blogs %}
+<div class="container alert alert-success" role="alert">
+    <p>{{ blog.created_at }}</p>
+    <p>タイトル：<a href="{% url 'blog:detail' blog.pk %}">{{ blog.title }}</a></p>
+</div>
 {% endfor %}
 {% endblock %}

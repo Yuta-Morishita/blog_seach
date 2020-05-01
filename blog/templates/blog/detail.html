@@ -1,9 +1,15 @@
-{% extends 'blog/base.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
-<h1>{{ object.title }}</h1>
-<p>{{ object.updated_at }}</p>
-{{ object.text | safe | linebreaksbr }}
-<hr /></br>
-<a href="{% url 'blog:index' %}">トップページに戻る</a>
+<div class="container alert alert-success" role="alert">
+    <h4>タイトル：{{ blog.title }}</h4>
+</div>
+<div class="container alert alert-light" role="alert">
+    <p>{{ blog.updated_at }}</p>
+    {{ blog.text | safe | linebreaksbr }}
+    <hr /></br>
+    <a href="{% url 'blog:index' %}">トップページに戻る</a>
+</div>
+
+
 {% endblock %}
