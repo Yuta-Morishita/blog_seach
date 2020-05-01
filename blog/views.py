@@ -12,6 +12,7 @@ from operator import and_
 class IndexView(generic.ListView):
     model = Blog
     template_name = 'blog/index.html'
+    context_object_name = 'blogs'
 
     def get_queryset(self):
         queryset = Blog.objects.order_by('-id')
@@ -35,3 +36,4 @@ class IndexView(generic.ListView):
 class DetailView(generic.DeleteView):
     template_name = 'blog/detail.html'
     model = Blog
+    context_object_name = 'blog'
