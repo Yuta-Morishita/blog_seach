@@ -2,7 +2,8 @@
 
 {% block content %}
 <h1>一覧</h1><br>
-{% for blog in blog %}
+<!-- blog_listに変更 -->
+{% for blog in blog_list %}
 <ul>
     <li>
         {{ blog.created_at }}
